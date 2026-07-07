@@ -83,14 +83,7 @@ export default function BookInterestForm({ books }: { books: Book[] }) {
         }}
       >
         Thank you — you’re on the list. I’ll be in touch when there’s enough interest to
-        start writing. In the meantime, feel free to{" "}
-        <a
-          href="mailto:agordash@gmail.com"
-          style={{ color: "var(--accent)", textDecoration: "none" }}
-        >
-          reach out directly
-        </a>
-        .
+        start writing.
       </div>
     );
   }

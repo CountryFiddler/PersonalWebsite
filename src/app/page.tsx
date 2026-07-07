@@ -38,7 +38,6 @@ const WORK: WorkItem[] = [
 ];
 
 const CONTACT = [
-  { label: "Email", href: "mailto:alexander@civicleave.com" },
   { label: "GitHub", href: "https://github.com/CountryFiddler" },
   { label: "LinkedIn", href: "https://www.linkedin.com/in/alexander-gordash" },
 ];
