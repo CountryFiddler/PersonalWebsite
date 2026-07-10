@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Newsreader, IBM_Plex_Mono } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import SiteNav from "./SiteNav";
 
@@ -33,6 +34,19 @@ export default function RootLayout({
       className={`${newsreader.variable} ${plexMono.variable} h-full`}
     >
       <body className="min-h-full">
+        {/* Google Analytics (gtag.js) — loaded once here, applies to every route */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-HYRQSXNKD2"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-HYRQSXNKD2');
+          `}
+        </Script>
         <SiteNav />
         {children}
       </body>
