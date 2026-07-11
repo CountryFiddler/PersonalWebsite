@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import Link from "next/link";
+import { getAllPosts, formatDate } from "@/lib/posts";
 
 export const metadata: Metadata = {
   title: "Blog — Alexander Gordash",
@@ -21,6 +23,8 @@ const labelStyle: React.CSSProperties = {
 };
 
 export default function BlogPage() {
+  const posts = getAllPosts();
+
   return (
     <div style={{ maxWidth: 560, margin: "0 auto", padding: "110px 32px 120px" }}>
       <header>
@@ -37,31 +41,75 @@ export default function BlogPage() {
           Blog
         </h1>
         <p style={{ fontSize: 19, lineHeight: 1.65, color: "var(--text-body)", margin: "20px 0 0" }}>
-          Nothing published yet — posts are on the way. I’ll be writing on React &amp; React
-          Native, building SaaS products, agentic software development, and other things
-          meant to be genuinely useful to software developers and SaaS founders.
+          Writing on React &amp; React Native, building SaaS products, agentic software
+          development, and other things meant to be genuinely useful to software developers
+          and SaaS founders.
         </p>
       </header>
 
-      <section style={{ marginTop: 56 }}>
-        <div style={{ ...labelStyle, marginBottom: 22 }}>Topics I’ll cover</div>
-        <ul style={{ listStyle: "none", margin: 0, padding: 0 }}>
-          {TOPICS.map((topic, i) => (
-            <li
-              key={topic}
-              style={{
-                fontSize: 19,
-                color: "var(--text-primary)",
-                padding: "16px 0",
-                borderTop: "1px solid var(--hairline)",
-                borderBottom: i === TOPICS.length - 1 ? "1px solid var(--hairline)" : undefined,
-              }}
-            >
-              {topic}
-            </li>
-          ))}
-        </ul>
-      </section>
+      {posts.length > 0 ? (
+        <section style={{ marginTop: 56 }}>
+          <ul style={{ listStyle: "none", margin: 0, padding: 0 }}>
+            {posts.map((post, i) => (
+              <li
+                key={post.slug}
+                style={{
+                  padding: "22px 0",
+                  borderTop: "1px solid var(--hairline)",
+                  borderBottom:
+                    i === posts.length - 1 ? "1px solid var(--hairline)" : undefined,
+                }}
+              >
+                <Link
+                  href={`/blog/${post.slug}`}
+                  style={{ textDecoration: "none", color: "inherit", display: "block" }}
+                >
+                  <div style={{ display: "flex", alignItems: "baseline", gap: 12 }}>
+                    <span style={{ fontSize: 19, color: "var(--text-primary)" }}>
+                      {post.title}
+                    </span>
+                    {post.draft && <span style={{ ...labelStyle, fontSize: 10 }}>Draft</span>}
+                  </div>
+                  <div style={{ ...labelStyle, marginTop: 8 }}>{formatDate(post.date)}</div>
+                  {post.summary && (
+                    <div
+                      style={{
+                        fontSize: 16,
+                        lineHeight: 1.55,
+                        color: "var(--text-muted)",
+                        marginTop: 8,
+                      }}
+                    >
+                      {post.summary}
+                    </div>
+                  )}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </section>
+      ) : (
+        <section style={{ marginTop: 56 }}>
+          <div style={{ ...labelStyle, marginBottom: 22 }}>Topics I’ll cover</div>
+          <ul style={{ listStyle: "none", margin: 0, padding: 0 }}>
+            {TOPICS.map((topic, i) => (
+              <li
+                key={topic}
+                style={{
+                  fontSize: 19,
+                  color: "var(--text-primary)",
+                  padding: "16px 0",
+                  borderTop: "1px solid var(--hairline)",
+                  borderBottom:
+                    i === TOPICS.length - 1 ? "1px solid var(--hairline)" : undefined,
+                }}
+              >
+                {topic}
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
     </div>
   );
 }
