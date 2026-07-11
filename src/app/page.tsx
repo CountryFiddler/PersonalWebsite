@@ -89,9 +89,8 @@ export default function Home() {
           </h1>
         </div>
         <p style={{ fontSize: 19, lineHeight: 1.65, color: "var(--text-body)", margin: "24px 0 0" }}>
-          React &amp; React&nbsp;Native developer and SaaS founder. For
-          five years I’ve built cross-platform products for local governments, small farmers, and trades-based businesses, turning real user
-          feedback into software people actually adopt.
+          React &amp; React&nbsp;Native developer and SaaS founder. I’ve built products for local governments, small farmers, and trades-based businesses, turning real user
+          feedback into software people readily adopt.
         </p>
       </header>
 
