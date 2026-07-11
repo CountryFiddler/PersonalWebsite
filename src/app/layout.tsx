@@ -32,8 +32,9 @@ export default function RootLayout({
     <html
       lang="en"
       className={`${newsreader.variable} ${plexMono.variable} h-full`}
+      suppressHydrationWarning
     >
-      <body className="min-h-full">
+      <body className="min-h-full" suppressHydrationWarning>
         {/* Google Analytics (gtag.js) — loaded once here, applies to every route */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-HYRQSXNKD2"

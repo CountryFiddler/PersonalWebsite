@@ -61,25 +61,20 @@ export default function Home() {
       {/* Intro */}
       <header>
         <div style={{ display: "flex", alignItems: "center", gap: 20 }}>
-          <div
-            aria-hidden
+          <Image
+            src="/profile.jpg"
+            alt="Alexander Gordash"
+            width={84}
+            height={84}
+            priority
             style={{
               width: 84,
               height: 84,
               flex: "none",
               borderRadius: "50%",
-              background: "var(--accent)",
-              color: "var(--paper)",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              fontFamily: "var(--font-newsreader), Georgia, serif",
-              fontSize: 34,
-              fontWeight: 420,
+              objectFit: "cover",
             }}
-          >
-            AG
-          </div>
+          />
           <h1
             style={{
               fontFamily: "var(--font-newsreader), Georgia, serif",
