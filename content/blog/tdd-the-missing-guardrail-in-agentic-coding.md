@@ -1,7 +1,7 @@
 ---
 title: "Why Test-Driven Development Is the Missing Guardrail in Agentic Coding"
 date: "2026-07-09"
-summary: "Agents get you 80–90% of the way there and then quietly break what already worked. Test-driven development is the feedback loop that closes the gap — and it changed how I build."
+summary: "Agents get you most of the way there and then quietly break what was already working. Test-driven development is the feedback loop that protects against regressions in your codebase."
 draft: false
 ---
 
@@ -21,7 +21,7 @@ using AI properly were game-changing.
 ## The real problem isn't AI. It's the lack of a guardrail
 
 Here's the thing people miss when they get frustrated with agentic coding: the model
-is usually *good*. On a typical simple, well-defined task, a strong agent gets you 80–90% of the way there
+is usually *good*. On a simple, well-defined task, a strong agent gets you 80–90% of the way there
 on the first pass. 
 
 But that last 10%-20% is where regressions live. And without a system, every
