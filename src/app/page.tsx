@@ -73,6 +73,7 @@ export default function Home() {
               flex: "none",
               borderRadius: "50%",
               objectFit: "cover",
+              objectPosition: "center 12%",
             }}
           />
           <h1
