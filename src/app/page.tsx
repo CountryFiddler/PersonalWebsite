@@ -62,7 +62,7 @@ export default function Home() {
       <header>
         <div style={{ display: "flex", alignItems: "center", gap: 20 }}>
           <Image
-            src="/profile-photo.jpg"
+            src="/profile-photo-v2.jpg"
             alt="Alexander Gordash"
             width={84}
             height={84}
