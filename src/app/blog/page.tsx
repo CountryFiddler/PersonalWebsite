@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { getAllPosts, formatDate } from "@/lib/posts";
+import SubscribeForm from "./SubscribeForm";
 
 export const metadata: Metadata = {
   title: "Blog — Alexander Gordash",
@@ -110,6 +111,38 @@ export default function BlogPage() {
           </ul>
         </section>
       )}
+
+      <section
+        style={{
+          marginTop: 56,
+          paddingTop: 40,
+          borderTop: "1px solid var(--hairline)",
+        }}
+      >
+        <h2
+          style={{
+            fontFamily: "var(--font-newsreader), Georgia, serif",
+            fontWeight: 420,
+            fontSize: 22,
+            lineHeight: 1.3,
+            margin: 0,
+            letterSpacing: "-0.01em",
+          }}
+        >
+          Subscribe
+        </h2>
+        <p
+          style={{
+            fontSize: 17,
+            lineHeight: 1.6,
+            color: "var(--text-body)",
+            margin: "12px 0 24px",
+          }}
+        >
+          Get notified via email when a new post drops.
+        </p>
+        <SubscribeForm />
+      </section>
     </div>
   );
 }

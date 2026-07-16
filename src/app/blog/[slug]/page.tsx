@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { getPost, getPostSlugs, formatDate } from "@/lib/posts";
+import SubscribeForm from "../SubscribeForm";
 
 // Pre-render one static HTML page per post at build time (required for `output: export`).
 export function generateStaticParams() {
@@ -67,6 +68,38 @@ export default async function PostPage({
       <article className="prose" style={{ marginTop: 40 }}>
         <ReactMarkdown remarkPlugins={[remarkGfm]}>{post.content}</ReactMarkdown>
       </article>
+
+      <section
+        style={{
+          marginTop: 56,
+          paddingTop: 40,
+          borderTop: "1px solid var(--hairline)",
+        }}
+      >
+        <h2
+          style={{
+            fontFamily: "var(--font-newsreader), Georgia, serif",
+            fontWeight: 420,
+            fontSize: 22,
+            lineHeight: 1.3,
+            margin: 0,
+            letterSpacing: "-0.01em",
+          }}
+        >
+          Want to see more articles like this?
+        </h2>
+        <p
+          style={{
+            fontSize: 17,
+            lineHeight: 1.6,
+            color: "var(--text-body)",
+            margin: "12px 0 24px",
+          }}
+        >
+          Subscribe to get notified via email when a new post drops.
+        </p>
+        <SubscribeForm />
+      </section>
     </div>
   );
 }
