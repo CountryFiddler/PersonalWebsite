@@ -56,8 +56,8 @@ export default function BooksPage() {
           Books
         </h1>
         <p style={{ fontSize: 19, lineHeight: 1.65, color: "var(--text-body)", margin: "20px 0 0" }}>
-          Two books I want to write. I’m gauging interest before committing to one. If
-          enough people want a book, I’ll write it and let you know when it’s underway.
+          Two books I want to write, however, I’m gauging interest before committing to writing any of these. If
+          enough people are interested, I’ll write them and let you know when it’s underway.
         </p>
       </header>
 
